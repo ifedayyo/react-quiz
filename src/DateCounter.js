@@ -34,6 +34,7 @@ function DateCounter() {
 
   const [state, dispatch] = useReducer(reducer, initialState);
   //destructuring the state above
+  //the dispatch function triggers state updates, by sending actions from event handlers to the reducer
   const { count, step } = state;
 
   // This mutates the date object.
