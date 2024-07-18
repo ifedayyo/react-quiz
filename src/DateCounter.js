@@ -23,6 +23,9 @@ function reducer(state, action) {
 //if (action.type === "setCount") return action.payload;
 
 function DateCounter() {
+  //const [count, setCount] = useState(0);
+  // const [step, setStep] = useState(1);
+
   const initialState = { count: 0, step: 1 };
   const [state, dispatch] = useReducer(reducer, initialState);
   const { count, step } = state;
