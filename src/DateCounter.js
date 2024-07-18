@@ -2,6 +2,8 @@ import { useReducer } from "react";
 
 const initialState = { count: 0, step: 1 };
 
+//this is the reducer function from the useReducer hook
+//action is an object that describes how to update state
 function reducer(state, action) {
   //console.log(state, action);
 
@@ -31,6 +33,7 @@ function DateCounter() {
   // const [step, setStep] = useState(1);
 
   const [state, dispatch] = useReducer(reducer, initialState);
+  //destructuring the state above
   const { count, step } = state;
 
   // This mutates the date object.
