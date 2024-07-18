@@ -2,13 +2,22 @@ import { useReducer } from "react";
 
 function reducer(state, action) {
   console.log(state, action);
-  return { count: 0, step: 1 };
 
-  //it is common to use a switch statement in a useReducer hook
-  //if (action.type === "inc") return state + 1;
-  //if (action.type === "dec") return state - 1;
-  //if (action.type === "setCount") return action.payload;
+  switch (action.type) {
+    case "dec":
+      return { ...state, count: state.count - 1 };
+    case "inc":
+      return { ...state, count: state.count + 1 };
+    default:
+      throw new Error("Unkown action");
+  }
 }
+
+//it is common to use a switch statement in a useReducer hook
+//if (action.type === "inc") return state + 1;
+//if (action.type === "dec") return state - 1;
+//if (action.type === "setCount") return action.payload;
+
 function DateCounter() {
   //const [count, setCount] = useState(0);
   // const [step, setStep] = useState(1);
