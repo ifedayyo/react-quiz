@@ -4,7 +4,9 @@ export default function Question({ question }) {
       <h4> {question.question}</h4>
       <div>
         {question.options.map((option) => (
-          <button className="btn btn-option">{option}</button>
+          <button className="btn btn-option" key={option}>
+            {option}
+          </button>
         ))}
       </div>
     </div>
