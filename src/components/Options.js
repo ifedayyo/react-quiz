@@ -13,6 +13,7 @@ export default function Options({ question, dispatch, answer }) {
                 : ""
             }`}
             key={option}
+            //the below prevents users from changing their answers
             disabled={answer !== null}
             onClick={() => dispatch({ type: "newAnswer", payload: index })}
           >
