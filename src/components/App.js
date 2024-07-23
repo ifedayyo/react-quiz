@@ -37,6 +37,7 @@ function reducer(state, action) {
       };
     case "newAnswer":
       const question = state.questions.at(state.index);
+
       return {
         ...state,
         answer: action.payload,
