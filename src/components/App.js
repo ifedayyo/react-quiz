@@ -76,6 +76,7 @@ function reducer(state, action) {
     case "tick":
       return {
         ...state,
+        secondsRemaining: state.secondsRemaining - 1,
       };
     default:
       throw new Error("Action unknown");
@@ -127,7 +128,7 @@ export default function App() {
             />
 
             <Footer>
-              <Timer dispatch={dispatch} />
+              <Timer dispatch={dispatch} secondsRemaining={secondsRemaining} />
               <NextButton
                 dispatch={dispatch}
                 answer={answer}
