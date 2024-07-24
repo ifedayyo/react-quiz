@@ -120,7 +120,7 @@ export default function App() {
             />
 
             <Footer>
-              <Timer numQuestions={numQuestions} />
+              <Timer />
               <NextButton
                 dispatch={dispatch}
                 answer={answer}
