@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 
-export default function Timer({ dispatch }) {
+export default function Timer({ dispatch, secondsRemaining }) {
+  const mins = Math.floor(secondsRemaining / 60);
+  const seconds = secondsRemaining % 60;
   //const [counter, setCounter] = useState(60);
 
   // eslint-disable-next-line no-lone-blocks
@@ -12,12 +14,22 @@ export default function Timer({ dispatch }) {
 
   useEffect(
     function () {
-      setInterval(function () {
+      const id = setInterval(function () {
         dispatch({ type: "tick" });
       }, 1000);
+
+      //the below is a cleanup function to prevent the timer from running till eternityy
+      return () => clearInterval(id);
     },
     [dispatch]
   );
 
-  return <button className="timer">6:00</button>;
+  return (
+    <button className="timer">
+      {" "}
+      {mins < 10 && "0"}
+      {mins}:{seconds < 10 && "0"}
+      {seconds}
+    </button>
+  );
 }
