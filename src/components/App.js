@@ -64,6 +64,12 @@ function reducer(state, action) {
         index: state.index + 1,
         answer: null,
       };
+    case "restart":
+      return {
+        ...initialState,
+        questions: state.questions,
+        status: "ready",
+      };
     default:
       throw new Error("Action unknown");
   }

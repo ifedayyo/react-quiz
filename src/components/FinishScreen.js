@@ -22,10 +22,10 @@ export default function FinishScreen({
 
       <button
         className="btn btn-ui"
-        onClick={() => dispatch({ type: "start" })}
+        onClick={() => dispatch({ type: "restart" })}
       >
         {" "}
-        Start Again
+        Retart Quiz
       </button>
     </>
   );
