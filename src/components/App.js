@@ -20,6 +20,7 @@ const initialState = {
   answer: null,
   points: 0,
   highscore: 0,
+  secondsRemaining: 10,
 };
 
 function reducer(state, action) {
@@ -72,14 +73,20 @@ function reducer(state, action) {
         questions: state.questions,
         status: "ready",
       };
+    case "tick":
+      return {
+        ...state,
+      };
     default:
       throw new Error("Action unknown");
   }
 }
 export default function App() {
   //destructuring our state
-  const [{ questions, status, index, answer, points, highscore }, dispatch] =
-    useReducer(reducer, initialState);
+  const [
+    { questions, status, index, answer, points, highscore, secondsRemaining },
+    dispatch,
+  ] = useReducer(reducer, initialState);
 
   const numQuestions = questions.length;
   const maxPossiblePoints = questions.reduce(
@@ -120,7 +127,7 @@ export default function App() {
             />
 
             <Footer>
-              <Timer />
+              <Timer dispatch={dispatch} />
               <NextButton
                 dispatch={dispatch}
                 answer={answer}
