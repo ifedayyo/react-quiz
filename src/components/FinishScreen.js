@@ -22,7 +22,7 @@ export default function FinishScreen({
 
       <button
         className="btn btn-ui"
-        onClick={() => dispatch({ type: "dataReceived" })}
+        onClick={() => dispatch({ type: "start" })}
       >
         {" "}
         Start Again
