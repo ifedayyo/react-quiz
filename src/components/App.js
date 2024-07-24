@@ -123,6 +123,7 @@ export default function App() {
             points={points}
             highscore={highscore}
             maxPossiblePoints={maxPossiblePoints}
+            dispatch={dispatch}
           />
         )}
       </Main>
